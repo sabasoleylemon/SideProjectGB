@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy 59th Birthday Hamid! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            min-height: 100vh;
+            cursor: default;
+        }
+        
+        /* Animated Background */
+        .main-background {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, #ffeaa7 0%, #fab1a0 50%, #ff7675 100%);
+            z-index: 1;
+        }
+        
+        /* Table Surface */
+        .table-surface {
+            position: fixed;
+            bottom: -20%;
+            left: 50%;
+            transform: translateX(-50%) rotateX(60deg);
+            width: 140%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(90deg, rgba(139, 69, 19, 0.1) 0px, rgba(139, 69, 19, 0.1) 2px, transparent 2px, transparent 50px),
+                repeating-linear-gradient(0deg, rgba(139, 69, 19, 0.05) 0px, rgba(139, 69, 19, 0.05) 2px, transparent 2px, transparent 50px),
+                linear-gradient(135deg, #cd853f 0%, #a0522d 50%, #8b4513 100%);
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        
+        /* Birthday Message */
+        .corner-message {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+            padding: 30px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            animation: slideIn 1s ease-out 1s both;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .birthday-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .birthday-name {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb 0%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 8px 0;
+            line-height: 1.2;
+        }
+        
+        .birthday-age {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin: 5px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .birthday-from {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin: 10px 0 0 5px;
+            font-weight: 700;
+        }
+        
+        /* 3D Birthday Cake */
+        .cake-container {
+            position: fixed;
+            bottom: 80px;
+            right: 80px;
+            z-index: 101;
+            animation: cakeFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes cakeFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 250px;
+            transform-style: preserve-3d;
+            animation: cakeRotate 20s linear infinite;
+        }
+        
+        @keyframes cakeRotate {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+        
+        .cake-layer {
+            position: absolute;
+            width: 180px;
+            height: 60px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .cake-layer-1 {
+            bottom: 0;
+            left: 10px;
+            width: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .cake-layer-2 {
+            bottom: 60px;
+            left: 20px;
+            width: 160px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .cake-layer-3 {
+            bottom: 120px;
+            left: 30px;
+            width: 140px;
+            background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
+        }
+        
+        .cake-top {
+            position: absolute;
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 5px 10px rgba(0, 0, 0, 0.3);
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 5px 10px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(255, 215, 0, 1), 0 5px 15px rgba(0, 0, 0, 0.5);
+            }
+        }
+        
+        .candle {
+            position: absolute;
+            width: 8px;
+            height: 40px;
+            background: linear-gradient(180deg, #ffd700 0%, #ffed4e 100%);
+            bottom: 180px;
+            border-radius: 4px 4px 0 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .candle::after {
+            content: '🔥';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            animation: flicker 1s ease-in-out infinite;
+        }
+        
+        @keyframes flicker {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+        }
+        
+        .candle-1 { left: 40px; }
+        .candle-2 { left: 95px; }
+        .candle-3 { right: 40px; }
+        
+        /* Photo Cards */
+        .photo-cards {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+        
+        .photo-card {
+            position: absolute;
+            width: 220px;
+            height: 280px;
+            cursor: move;
+            transition: transform 0.1s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .photo-card.dragging {
+            cursor: grabbing;
+            z-index: 1000 !important;
+        }
+        
+        .photo-card-flipper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .photo-card.flipped .photo-card-flipper {
+            transform: rotateY(180deg);
+        }
+        
+        .photo-card-front,
+        .photo-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+        }
+        
+        .photo-card-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            padding: 30px;
+        }
+        
+        .photo-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .photo-card-inner {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 20%, #f093fb 40%, #4facfe 60%, #43e97b 80%, #feca57 100%);
+            background-size: 200% 200%;
+            animation: colorShift 10s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        @keyframes colorShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .photo-card-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-card-number {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #2d3748;
+            margin-top: 10px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .falling {
+            animation: fallAndBounce 2.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        
+        @keyframes fallAndBounce {
+            0% {
+                transform: translateY(-1000px) rotate(0deg) scale(0.3);
+                opacity: 0;
+            }
+            60% {
+                opacity: 1;
+            }
+            85% {
+                transform: translateY(20px) rotate(var(--rotation)) scale(1.05);
+            }
+            100% {
+                transform: translateY(0) rotate(var(--rotation)) scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Confetti */
+        #confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        /* Instructions */
+        .instructions {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 150;
+            font-size: 0.9rem;
+            color: #666;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            .corner-message { top: 25px; left: 25px; padding: 20px 25px; }
+            .birthday-title { font-size: 2.5rem; }
+            .birthday-name { font-size: 2rem; }
+            .birthday-age { font-size: 1.8rem; }
+            .photo-card { width: 170px; height: 220px; }
+            .cake-container { bottom: 40px; right: 40px; }
+            .cake { transform: scale(0.7); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="main-background"></div>
+    <div class="table-surface"></div>
+    
+    <!-- Birthday Message -->
+    <div class="corner-message">
+        <h1 class="birthday-title">Happy Birthday</h1>
+        <h2 class="birthday-name">Hamid!</h2>
+        <div class="birthday-age">🎂 59 Years Young! 🎂</div>
+        <p class="birthday-from">With Love, Saba 💝</p>
+    </div>
+    
+    <!-- 3D Birthday Cake -->
+    <div class="cake-container">
+        <div class="cake">
+            <div class="cake-layer cake-layer-1"></div>
+            <div class="cake-layer cake-layer-2"></div>
+            <div class="cake-layer cake-layer-3"></div>
+            <div class="candle candle-1"></div>
+            <div class="candle candle-2"></div>
+            <div class="candle candle-3"></div>
+            <div class="cake-top">59</div>
+        </div>
+    </div>
+    
+    <!-- Photo Cards Container -->
+    <div class="photo-cards" id="photo-cards"></div>
+    
+    <!-- Confetti -->
+    <canvas id="confetti"></canvas>
+    
+    <!-- Instructions -->
+    <div class="instructions">
+        💡 Click photos to flip • Drag to move them around
+    </div>
+    
+    <!-- Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="birthday-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Configuration
+        const photoCount = 6;
+        const photoEmojis = ['📸', '🎉', '💝', '🎂', '🌟', '✨'];
+        const backMessages = [
+            "Forever grateful for you, Dad! 💝",
+            "59 years of amazing memories! 🎉",
+            "You're the best dad ever! 🏆",
+            "Thank you for everything! 🙏",
+            "Love you to the moon! 🌙",
+            "Happy Birthday Hamid! 🎂"
+        ];
+        
+        // Generate photo positions
+        const positions = [];
+        const minDistance = 250;
+        
+        for (let i = 0; i < photoCount; i++) {
+            let attempts = 0;
+            let validPosition = false;
+            let x, y;
+            
+            while (!validPosition && attempts < 100) {
+                x = Math.random() * (window.innerWidth - 280) + 80;
+                y = Math.random() * (window.innerHeight * 0.55 - 300) + window.innerHeight * 0.25;
+                
+                validPosition = true;
+                for (const pos of positions) {
+                    const distance = Math.sqrt(Math.pow(x - pos.x, 2) + Math.pow(y - pos.y, 2));
+                    if (distance < minDistance) {
+                        validPosition = false;
+                        break;
+                    }
+                }
+                attempts++;
+            }
+            
+            positions.push({
+                x: x,
+                y: y,
+                rotation: Math.random() * 30 - 15
+            });
+        }
+        
+        // Create photo cards
+        const photoCards = document.getElementById('photo-cards');
+        
+        for (let i = 1; i <= photoCount; i++) {
+            const card = document.createElement('div');
+            card.className = 'photo-card';
+            const position = positions[i - 1];
+            
+            card.style.left = position.x + 'px';
+            card.style.top = position.y + 'px';
+            card.style.setProperty('--rotation', position.rotation + 'deg');
+            card.style.zIndex = 10 + i;
+            
+            card.innerHTML = `
+                <div class="photo-card-flipper">
+                    <div class="photo-card-front">
+                        <div class="photo-card-inner">
+                            ${photoEmojis[i - 1]}
+                            <img src="photos/photo${i}.jpg" alt="Memory ${i}" loading="lazy" 
+                                 style="display:none;" 
+                                 onload="this.style.display='block'; this.parentElement.style.fontSize='0';" 
+                                 onerror="this.style.display='none'; this.parentElement.style.fontSize='4rem';">
+                        </div>
+                        <div class="photo-card-number">Memory ${i} • Click to flip</div>
+                    </div>
+                    <div class="photo-card-back">
+                        ${backMessages[i - 1]}
+                    </div>
+                </div>
+            `;
+            
+            // Flip on click
+            card.addEventListener('click', function(e) {
+                if (!this.classList.contains('dragging')) {
+                    this.classList.toggle('flipped');
+                }
+            });
+            
+            // Drag functionality
+            let isDragging = false;
+            let currentX, currentY, initialX, initialY;
+            
+            card.addEventListener('mousedown', function(e) {
+                if (e.target.tagName === 'IMG') return;
+                isDragging = true;
+                this.classList.add('dragging');
+                this.style.transition = 'none';
+                this.style.zIndex = 1000;
+                
+                initialX = e.clientX - parseInt(this.style.left);
+                initialY = e.clientY - parseInt(this.style.top);
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                
+                const draggingCard = document.querySelector('.dragging');
+                if (draggingCard) {
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                    
+                    draggingCard.style.left = currentX + 'px';
+                    draggingCard.style.top = currentY + 'px';
+                }
+            });
+            
+            document.addEventListener('mouseup', function(e) {
+                if (!isDragging) return;
+                isDragging = false;
+                
+                const draggingCard = document.querySelector('.dragging');
+                if (draggingCard) {
+                    draggingCard.classList.remove('dragging');
+                    draggingCard.style.transition = 'transform 0.1s ease';
+                }
+            });
+            
+            photoCards.appendChild(card);
+            
+            // Falling animation
+            setTimeout(() => {
+                card.classList.add('falling');
+            }, i * 250);
+        }
+        
+        // Confetti
+        const canvas = document.getElementById('confetti');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', '#fa709a', '#feca57', '#ff6b6b', '#ffd700'];
+        const particles = [];
+        
+        for (let i = 0; i < 250; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height - canvas.height,
+                size: Math.random() * 12 + 5,
+                speedY: Math.random() * 5 + 1.5,
+                speedX: Math.random() * 3 - 1.5,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                rotation: Math.random() * 360,
+                rotationSpeed: Math.random() * 15 - 7.5,
+                shape: Math.random() > 0.5
+            });
+        }
+        
+        function animateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(p => {
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate((p.rotation * Math.PI) / 180);
+                ctx.fillStyle = p.color;
+                
+                if (p.shape) {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                }
+                
+                ctx.restore();
+                
+                p.y += p.speedY;
+                p.x += p.speedX;
+                p.rotation += p.rotationSpeed;
+                
+                if (p.y > canvas.height) {
+                    p.y = -20;
+                    p.x = Math.random() * canvas.width;
+                }
+            });
+            
+            requestAnimationFrame(animateConfetti);
+        }
+        
+        animateConfetti();
+        
+        // Resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // Start music at MAXIMUM volume
+        const music = document.getElementById('bgMusic');
+        music.volume = 1.0; // Maximum volume
+        music.play().catch(e => console.log('Music autoplay may be blocked'));
+    </script>
+</body>
+</html>
+
